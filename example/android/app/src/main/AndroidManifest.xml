@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" package="com.imin.printer.imin_printer_example">
+    xmlns:tools="http://schemas.android.com/tools">
     <application
         android:label="imin_printer_example"
         android:name="${applicationName}"
