@@ -1,19 +1,17 @@
-import 'package:flutter/material.dart';
 import 'dart:async';
+
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:imin_printer/imin_printer.dart';
-import 'package:imin_printer/enums.dart';
-import 'package:imin_printer/imin_style.dart';
-import 'package:imin_printer/column_maker.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:imin_printer/src.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   State<MyApp> createState() => _MyAppState();
@@ -94,7 +92,8 @@ class _MyAppState extends State<MyApp> {
                     ElevatedButton(
                         onPressed: () async {
                           await iminPrinter.printText('居中',
-                              style: IminTextStyle(align: IminPrintAlign.center));
+                              style:
+                                  IminTextStyle(align: IminPrintAlign.center));
                         },
                         child: const Text('text alignment'))
                   ]),
@@ -239,8 +238,8 @@ class _MyAppState extends State<MyApp> {
                       child: const Text('print barCode')),
                   ElevatedButton(
                       onPressed: () async {
-                        Uint8List byte1 = await _getImageFromAsset(
-                            'assets/images/logo.png');
+                        Uint8List byte1 =
+                            await _getImageFromAsset('assets/images/logo.png');
                         Uint8List byte2 =
                             await _getImageFromAsset('assets/images/logo.png');
 
